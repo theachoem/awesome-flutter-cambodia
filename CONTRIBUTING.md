@@ -4,14 +4,33 @@ Thanks for wanting to contribute! This list stays useful because it's easy to ad
 
 ## Adding an app
 
-1. Add a row to the table in the relevant category (or create a new category if none fits) in [`README.md`](./README.md).
-2. Keep the row to: **Icon, App, Category, Description, Link**.
-   - **Icon** — optional. If you have one, drop a square PNG/JPG (ideally 128px+) into [`logos/`](./logos), named as a lowercase-kebab-case slug of the app name (e.g. `wing-bank.png`), and reference it as `<img src="logos/your-file.png" width="32">`.
+The easiest way to contribute: give an AI coding agent (Claude Code or similar) the app's Play Store and/or App Store link, plus the prompt below — it can look up the metadata, verify Flutter, fetch the icon, and open a PR for you.
+
+```
+Add this app to https://github.com/theachoem/awesome-flutter-cambodia
+
+Play Store: <PLAY_URL>
+App Store: <APP_STORE_URL or "none">
+
+1. Read this repo's CONTRIBUTING.md and the "How to verify an app is built with Flutter" section of README.md for the format and verification method this list uses.
+2. Fetch the store listing(s) for category, a one-sentence description, and developer name.
+3. Verify the app is fully built with Flutter (not just using it for one screen/feature) per the two-step method in README.md. If you can't conclusively confirm this — e.g. no device/emulator access to check the context menu, or an APK analysis that's inconclusive — say so explicitly instead of guessing, and don't add the entry.
+4. Download the app icon (highest resolution available) to assets/logos/<kebab-case-app-name>.png.
+5. Add a row to the correct category table in README.md, following the existing row format and the badge snippets in this file.
+6. Open a PR summarizing what you verified and how.
+```
+
+Contributing without an agent works too — just follow the steps below yourself.
+
+1. Verify the app is fully built with Flutter — see [How to verify an app is built with Flutter](./README.md#how-to-verify-an-app-is-built-with-flutter) in the README. An app that only uses Flutter for one screen or an embedded module is outside this list's scope.
+2. Add a row to the table in the relevant category (or create a new category if none fits) in [`README.md`](./README.md).
+3. Keep the row to: **Icon, App, Category, Description, Link**.
+   - **Icon** — optional. If you have one, drop a square PNG/JPG (ideally 128px+) into [`assets/logos/`](./assets/logos), named as a lowercase-kebab-case slug of the app name (e.g. `wing-bank.png`), and reference it as `<img src="assets/logos/your-file.png" width="32">`.
    - **App** — the app's name as shown on its store listing.
    - **Category** — one of the existing categories where possible, to keep the list scannable.
    - **Description** — one sentence, no marketing fluff.
    - **Link** — a badge per platform the app is available on, placed side by side in the one cell (see below). Badges render as fixed-size images, so unlike plain text links they never wrap awkwardly on narrow screens, and a contributor can add a badge for any platform without changing the table's shape.
-3. Keep rows within a category alphabetized by app name.
+4. Keep rows within a category alphabetized by app name.
 
 ### Link badges
 
