@@ -13,17 +13,18 @@ Play Store: <PLAY_URL>
 App Store: <APP_STORE_URL or "none">
 
 1. Fork theachoem/awesome-flutter-cambodia and clone your fork locally (`gh repo fork theachoem/awesome-flutter-cambodia --clone` if you have the GitHub CLI).
-2. Read this repo's CONTRIBUTING.md and README.md, and follow them: verify the app is fully built with Flutter, fetch its category/description/icon, and add a row in the documented format.
-3. If you can't conclusively verify it's fully Flutter, say so explicitly instead of guessing, and don't add the entry.
+2. Read this repo's CONTRIBUTING.md and README.md, and follow them: verify whether the app is fully built with Flutter or only uses it for one screen/module, fetch its category/description/icon, and add a row in the documented format (main list if fully Flutter, Partial Flutter Apps otherwise, noting which part uses Flutter).
+3. If you can't conclusively verify Flutter is used at all, say so explicitly instead of guessing, and don't add the entry.
 4. Commit, push to your fork, and open a PR summarizing what you verified and how.
 ```
 
 **Option 2 — contribute manually:**
 
 1. Fork this repo and clone your fork locally.
-2. Verify the app is fully built with Flutter — see [How to verify an app is built with Flutter](./README.md#how-to-verify-an-app-is-built-with-flutter) in the README. An app that only uses Flutter for one screen or an embedded module is outside this list's scope.
-3. Each category is its own `### <Category>` section with its own table in [`README.md`](./README.md). Add a row to the matching category's table, or create a new `### <Category>` section (own header + table) if none fits.
-4. Keep the row to: **Icon, App, Description, Link** (no Category column — the section header is the category).
+2. Verify whether the app is fully built with Flutter — see [How to verify an app is built with Flutter](./README.md#how-to-verify-an-app-is-built-with-flutter) in the README. If only one screen or module uses Flutter and the rest is native, it goes under [Partial Flutter Apps](./README.md#partial-flutter-apps) instead of the main list.
+3. **Main list:** each category is its own `### <Category>` section with its own table in [`README.md`](./README.md). Add a row to the matching category's table, or create a new `### <Category>` section (own header + table) if none fits.
+   **Partial Flutter Apps:** add a row to the single table under `## Partial Flutter Apps`, filling in the **Flutter used in** column with the specific screen/module (e.g. "Marketplace tab").
+4. Keep the row to: **Icon, App, Description, Link** (no Category column — the section header is the category; the Partial Flutter Apps table additionally has a **Flutter used in** column).
    - **Icon** — optional. If you have one, drop a square PNG/JPG (ideally 128px+) into [`assets/logos/`](./assets/logos), named as a lowercase-kebab-case slug of the app name (e.g. `wing-bank.png`), and reference it as `<img src="assets/logos/your-file.png" width="48">`.
    - **App** — the app's name as shown on its store listing.
    - **Description** — one sentence, no marketing fluff.

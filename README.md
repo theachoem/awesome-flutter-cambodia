@@ -16,7 +16,7 @@ Contributions welcome — see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 A directory of Cambodian apps built with Flutter — useful for UX inspiration, seeing what's shipped in production, or just discovering what's out there.
 
-> Only apps **fully** built with Flutter are listed here — see [How to verify an app is built with Flutter](#how-to-verify-an-app-is-built-with-flutter) below.
+> Only apps **fully** built with Flutter are listed here — see [How to verify an app is built with Flutter](#how-to-verify-an-app-is-built-with-flutter) below. Apps that use Flutter for a significant part but not the whole app are listed separately under [Partial Flutter Apps](#partial-flutter-apps).
 
 ### Business
 
@@ -51,7 +51,6 @@ A directory of Cambodian apps built with Flutter — useful for UX inspiration, 
 | <img src="assets/logos/aba-business.png" width="48"> | ABA Business | Companion app for ABA Business Web users to approve payments, use 2FA, view balances/statements, and manage business accounts/cards.    | [![Google Play](https://img.shields.io/badge/Google_Play-414141?style=flat&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.ababank.ababusiness) [![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=flat&logo=appstore&logoColor=white)](https://apps.apple.com/us/app/aba-business/id6445813834)    |
 | <img src="assets/logos/aba-merchant.png" width="48"> | ABA Merchant | Free mPOS app for ABA Bank merchants to accept QR payments (ABA PAY, Visa QR, Mastercard QR).                                           | [![Google Play](https://img.shields.io/badge/Google_Play-414141?style=flat&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.ababank.payway) [![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=flat&logo=appstore&logoColor=white)](https://apps.apple.com/us/app/aba-merchant/id1559488956)         |
 | <img src="assets/logos/canadia-bank.png" width="48"> | Canadia Bank | Mobile banking app with account management, multi-currency balances, and Bakong transfers.                                              | [![Google Play](https://img.shields.io/badge/Google_Play-414141?style=flat&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.canadiabank.mobile) [![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=flat&logo=appstore&logoColor=white)](https://apps.apple.com/us/app/canadia-bank-app/id6738402086) |
-| <img src="assets/logos/wing-bank.png" width="48">    | Wing Bank    | Mobile banking/e-wallet app for sending money, international remittances, bank transfers, phone top-ups, and bill payments in Cambodia. | [![Google Play](https://img.shields.io/badge/Google_Play-414141?style=flat&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.wingmoney.wingpay) [![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=flat&logo=appstore&logoColor=white)](https://apps.apple.com/us/app/wing-bank/id1113286385)         |
 
 ### Food & Drink
 
@@ -107,9 +106,17 @@ A directory of Cambodian apps built with Flutter — useful for UX inspiration, 
 | <img src="assets/logos/kimseng-express.png" width="48">   | Kimseng Express     | Booking/ticketing app for Kimseng Express, a popular Cambodian bus operator.                                                      | [![Google Play](https://img.shields.io/badge/Google_Play-414141?style=flat&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.bookmebus.kimseng) [![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=flat&logo=appstore&logoColor=white)](https://apps.apple.com/us/app/kimseng-express/id1479152206)                |
 | <img src="assets/logos/larryta-bus.png" width="48">       | Larryta Bus         | Inter-provincial bus/express booking app for Cambodia (Phnom Penh, Siem Reap, Sihanoukville, Battambang, Poi Pet).                | [![Google Play](https://img.shields.io/badge/Google_Play-414141?style=flat&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.larrytabus.express) [![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=flat&logo=appstore&logoColor=white)](https://apps.apple.com/ph/app/larryta-bus/id6478513013)                   |
 
+## Partial Flutter Apps
+
+Apps that are mostly native but use Flutter for one significant screen or module — worth knowing about even though they don't qualify for the main list above.
+
+| Icon                                               | App       | Flutter used in | Description                                                                                                                             | Link                                                                                                                                                                                                                                                                                                                                       |
+| --------------------------------------------------- | --------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="assets/logos/wing-bank.png" width="48">    | Wing Bank | Marketplace tab   | Mobile banking/e-wallet app for sending money, international remittances, bank transfers, phone top-ups, and bill payments in Cambodia. | [![Google Play](https://img.shields.io/badge/Google_Play-414141?style=flat&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.wingmoney.wingpay) [![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=flat&logo=appstore&logoColor=white)](https://apps.apple.com/us/app/wing-bank/id1113286385) |
+
 ## How to verify an app is built with Flutter
 
-Only apps **fully** built with Flutter are listed above — an app that uses Flutter for just one screen or an embedded module isn't in scope for this list.
+Only apps **fully** built with Flutter are listed under [Cambodian Apps](#cambodian-apps) — an app that uses Flutter for just one screen or an embedded module belongs under [Partial Flutter Apps](#partial-flutter-apps) instead.
 
 1. **Step 1 — narrow it down:** scan installed apps with [FlutterShark](https://play.google.com/store/apps/details?id=com.fluttershark.fluttersharkapp). This only tells you the app _bundles_ Flutter somewhere — plenty of apps use Flutter for just one screen or feature and are native everywhere else. That's **not enough on its own** to list an app here.
 2. **Step 2 — confirm it's fully Flutter:** tap into a text field and long-press to open the selection menu. Flutter draws its own — it doesn't match the OS:
@@ -118,7 +125,7 @@ Only apps **fully** built with Flutter are listed above — an app that uses Flu
 | :----------------------------------------------------------------: | :-----------------------------------------------------------------: |
 |   ❌ **Native**<br>OS-styled pill menu, native selection handles   |       ✅ **Flutter**<br>Its own menu shape, font, and handles       |
 
-Check a few screens, not just one — some apps use Flutter for only part of the UI. Only list an app here if every screen shows the Flutter-style menu.
+Check a few screens, not just one — some apps use Flutter for only part of the UI. Only list an app under Cambodian Apps if every screen shows the Flutter-style menu; if just one section does (and the rest is native), list it under [Partial Flutter Apps](#partial-flutter-apps) with a note on which part uses Flutter.
 
 **On iPhone?** Both steps need Android — FlutterShark is Android-only, and Flutter's iOS text-selection menu is designed to mimic the native one, so Step 2 isn't reliable there either. If you're otherwise sure an app is fully Flutter (e.g. you know the dev team, or it's your own app), you can contribute it directly.
 
