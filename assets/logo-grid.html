@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Cambodian Flutter Apps: Logo Grid</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      background: #ffffff;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .cell {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .controls {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      font: 12px system-ui, sans-serif;
+      color: #999;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .controls input {
+      width: 48px;
+      font: inherit;
+      color: #333;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      text-align: center;
+    }
+
+    @media print {
+      .controls {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="controls">
+    <label for="cols">columns</label>
+    <input id="cols" type="number" min="1" max="12" value="8">
+  </div>
+  <div class="grid"></div>
+  <script>
+    const REPO = 'theachoem/awesome-flutter-cambodia';
+    const DIR = 'assets/logos';
+
+    const input = document.getElementById('cols');
+    const grid = document.querySelector('.grid');
+
+    input.addEventListener('input', () => {
+      const n = Math.max(1, Math.min(12, Number(input.value) || 1));
+      grid.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
+    });
+
+    function shuffle() {
+      const cells = Array.from(grid.children);
+      for (let i = cells.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cells[i], cells[j]] = [cells[j], cells[i]];
+      }
+      cells.forEach(cell => grid.appendChild(cell));
+    }
+
+    async function loadLogos() {
+      const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${DIR}`);
+      if (!res.ok) throw new Error(`GitHub API error ${res.status}`);
+      const files = await res.json();
+
+      for (const file of files) {
+        if (file.type !== 'file' || !/\.(png|jpe?g|svg|webp)$/i.test(file.name)) continue;
+        const cell = document.createElement('div');
+        cell.className = 'cell';
+        const img = document.createElement('img');
+        img.src = `logos/${file.name}`;
+        img.alt = '';
+        cell.appendChild(img);
+        grid.appendChild(cell);
+      }
+      shuffle();
+    }
+
+    loadLogos().catch(err => {
+      grid.textContent = `Couldn't load logos from GitHub: ${err.message}`;
+    });
+  </script>
+</body>
+
+</html>
